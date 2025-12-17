@@ -1,0 +1,29 @@
+# ==========================================
+# Model Configuration
+# EXPERIMENT: เปลี่ยนจาก Random Forest เป็น SVM
+# ==========================================
+
+data:
+  test_size: 0.2
+  random_state: 42
+
+model:
+  type: svm
+
+  random_forest:
+    n_estimators: 100
+    max_depth: 5
+    random_state: 42
+
+  svm:
+    C: 1.0
+    kernel: rbf
+    random_state: 42
+
+training:
+  cross_validation: true
+  cv_folds: 5
+
+output:
+  model_path: ../models/model.joblib
+  results_path: ../results/metrics.json
